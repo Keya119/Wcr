@@ -4,6 +4,12 @@ import java.util.*;
 
 public class EmployeeManager {
     public static void main(String[] args) {
+        // Basic args check
+        if (args == null || args.length == 0) {
+            System.out.println("No arguments provided.");
+            return;
+        }
+
         // Check arguments
         if (args[0].equals("l")) {
             System.out.println("Loading data ...");
@@ -12,7 +18,7 @@ public class EmployeeManager {
                         new InputStreamReader(
                                 new FileInputStream("employees.txt")));
                 String l = r.readLine();
-                String e[] = l.split(",");
+                String[] e = l.split(",");
                 for (String emp : e) {
                     System.out.println(emp);
                 }
@@ -26,7 +32,7 @@ public class EmployeeManager {
                                 new FileInputStream("employees.txt")));
                 String l = r.readLine();
                 System.out.println(l);
-                String e[] = l.split(",");
+                String[] e = l.split(",");
                 Random rand = new Random();
                 int idx = rand.nextInt(e.length);
                 System.out.println(e[idx]);
@@ -49,7 +55,7 @@ public class EmployeeManager {
                         new InputStreamReader(
                                 new FileInputStream("employees.txt")));
                 String l = r.readLine();
-                String e[] = l.split(",");
+                String[] e = l.split(",");
                 boolean found = false;
                 String s = args[0].substring(1);
                 for (int i = 0; i < e.length && !found; i++) {
@@ -90,7 +96,7 @@ public class EmployeeManager {
                         new InputStreamReader(
                                 new FileInputStream("employees.txt")));
                 String l = r.readLine();
-                String e[] = l.split(",");
+                String[] e = l.split(",");
                 String n = args[0].substring(1);
                 for (int i = 0; i < e.length; i++) {
                     if (e[i].equals(n)) {
@@ -110,7 +116,7 @@ public class EmployeeManager {
                         new InputStreamReader(
                                 new FileInputStream("employees.txt")));
                 String l = r.readLine();
-                String e[] = l.split(",");
+                String[] e = l.split(",");
                 String n = args[0].substring(1);
                 List<String> list = new ArrayList<>(Arrays.asList(e));
                 list.remove(n);
