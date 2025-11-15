@@ -93,7 +93,8 @@ public class EmployeeManager {
             System.out.println("Loading data ...");
             try {
                 BufferedReader r = new BufferedReader(
-                        new InputStreamReader(
+                        new InputStreamRe
+                        ader(
                                 new FileInputStream("employees.txt")));
                 String l = r.readLine();
                 String[] e = l.split(",");
